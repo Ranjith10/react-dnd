@@ -1,9 +1,17 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
 
-function App() {
-    return <div className='App'></div>
+import Container from './components/Components'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+
+const App = () => {
+    return (
+        <div className='App'>
+            <DndProvider backend={HTML5Backend}>
+                <Container />
+            </DndProvider>
+        </div>
+    )
 }
 
 export default App
