@@ -10,7 +10,7 @@ const Components = () => {
                 <Dustbin />
             </div>
             <div>
-                <Box />
+                <Box name = 'sample' />
             </div>
         </>
     )
