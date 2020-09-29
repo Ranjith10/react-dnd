@@ -5,6 +5,7 @@
     padding: 10px;
     justify-content: center;
     cursor: pointer;
+    background-color: white;
 }
 .item-container:hover {
     background-color: honeydew;

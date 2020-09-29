@@ -14,14 +14,17 @@ const List = ({data}) => {
                     (provided) => {
                         return (
                         <div
-                            innerRef = {provided.innerRef}
+                            ref = {provided.innerRef}
                             {...provided.droppableProps}
                             className = 'list-container'
                         >
                             {
                                 data.map((item, index) => {
-                                    return <Item key = {index} item = {item}/>
+                                    return <Item key = {index} index = {index} item = {item}/>
                                 })
+                            }
+                            {
+                                provided.placeholder
                             }
                         </div>
                     )}
