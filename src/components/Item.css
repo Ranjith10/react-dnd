@@ -1,0 +1,11 @@
+.item-container {
+    display: flex;
+    border: 1px solid;
+    margin: 0 0 20px 0;
+    padding: 10px;
+    justify-content: center;
+    cursor: pointer;
+}
+.item-container:hover {
+    background-color: honeydew;
+}

@@ -1,0 +1,13 @@
+.list-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0 0;
+}
+.list-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #2eaccc;
+    width: 15%;
+    justify-content: center;
+    padding: 20px;
+}
