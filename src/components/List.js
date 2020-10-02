@@ -20,7 +20,7 @@ const List = ({data}) => {
                         >
                             {
                                 data.map((item, index) => {
-                                    return <Item key = {index} index = {index} item = {item}/>
+                                    return <Item key = {item.id} index = {index} item = {item}/>
                                 })
                             }
                             {
