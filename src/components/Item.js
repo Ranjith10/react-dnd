@@ -6,7 +6,7 @@ import './Item.css'
 const Item = ({index, item}) => {
     return (
         <Draggable 
-            draggableId = {item.todo}
+            draggableId = {item}
             index = {index}        
         >   
             {
@@ -18,7 +18,7 @@ const Item = ({index, item}) => {
                             ref = {provided.innerRef}
                             className = 'item-container'
                         >
-                            {item.todo}
+                            {item}
                         </div>
                     )
                 }

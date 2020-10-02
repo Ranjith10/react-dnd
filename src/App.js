@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // import Container from './components/Components'
 // import { DndProvider } from 'react-dnd'
@@ -9,9 +9,24 @@ import {Data} from './Data.js'
 import List from './components/List'
 
 const App = () => {
+    const [data, setData] = useState(Data)
+    const dragEnd = (result) => {
+        const { source, destination, draggableId} = result 
 
-    const dragEnd = () => {
-        //TODO handle reorder of list 
+        //* return un-modified array if the destination is undefined
+        if(!destination) {
+            return
+        }
+        //* return un-modified array if the sorce and destination is same
+        if( source.droppableId === destination.droppableId && destination.index === source.index) {
+            return
+        }
+        //* Else re-order the array and return
+        console.log({result})
+        let reorderedData = [...data]
+        reorderedData.splice(source.index, 1)
+        reorderedData.splice(destination.index, 0, draggableId)
+        setData(reorderedData)
     }
 
     return (
@@ -20,7 +35,7 @@ const App = () => {
                 <Container />
             </DndProvider> */}
             <DragDropContext onDragEnd = {dragEnd}>
-                <List data = {Data}/>
+                <List data = {data}/>
             </DragDropContext>
         </div>
     )
