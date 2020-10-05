@@ -22,11 +22,11 @@ const App = () => {
             return
         }
         //* Else re-order the array and return
-        console.log({result})
-        let reorderedData = [...data]
-        reorderedData.splice(source.index, 1)
-        reorderedData.splice(destination.index, 0, draggableId)
+        let reorderedData = Array.from(data)
+        let [removedItem] = reorderedData.splice(source.index, 1)
+        reorderedData.splice(destination.index, 0, removedItem)
         setData(reorderedData)
+        console.log({reorderedData})
     }
 
     return (

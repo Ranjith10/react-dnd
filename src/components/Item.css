@@ -10,3 +10,6 @@
 .item-container:hover {
     background-color: honeydew;
 }
+.item-container.dragging {
+    background-color: #3bcc2e;
+}

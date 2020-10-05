@@ -6,19 +6,20 @@ import './Item.css'
 const Item = ({index, item}) => {
     return (
         <Draggable 
-            draggableId = {item}
-            index = {index}        
+            draggableId = {item.id}
+            index = {index}   
+            key = {item.id}     
         >   
             {
-                (provided) => {
+                (provided, snapshot) => {
                     return (
                         <div 
                             {...provided.dragHandleProps}
                             {...provided.draggableProps}
                             ref = {provided.innerRef}
-                            className = 'item-container'
+                            className = {snapshot.isDragging ? 'item-container dragging' : 'item-container'}
                         >
-                            {item}
+                            {item.todo}
                         </div>
                     )
                 }

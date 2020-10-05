@@ -11,12 +11,12 @@ const List = ({data}) => {
                 droppableId = 'TodoList'            
             >
                 {
-                    (provided) => {
+                    (provided, snapshot) => {
                         return (
                         <div
                             ref = {provided.innerRef}
                             {...provided.droppableProps}
-                            className = 'list-container'
+                            className = {snapshot.isDraggingOver ? 'list-container isDragging' : 'list-container'}
                         >
                             {
                                 data.map((item, index) => {
