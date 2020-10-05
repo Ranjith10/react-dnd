@@ -11,7 +11,7 @@ import List from './components/List'
 const App = () => {
     const [data, setData] = useState(Data)
     const dragEnd = (result) => {
-        const { source, destination, draggableId} = result 
+        const { source, destination} = result 
 
         //* return un-modified array if the destination is undefined
         if(!destination) {
